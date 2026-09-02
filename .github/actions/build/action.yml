@@ -1,4 +1,5 @@
 name: "Build and check"
+description: "Builds The Grand Archives via ce2fs and uploads an artifact"
 outputs:
   release-tag: 
     value: ${{ steps.collect_version.outputs.tag }}
@@ -23,7 +24,7 @@ runs:
       
     - name: Upload build
       id: upload_build
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: ER_TGA_${{ steps.collect_version.outputs.tag }}
         path: dist
